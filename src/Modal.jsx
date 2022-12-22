@@ -20,7 +20,8 @@ export default function Modal(props){
 
 
   return(
-    <section className="modal">
+    {props.completedModal ? "" :
+      <section className="modal">
         <h1>Back this project</h1>
         <p>
           Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
@@ -169,5 +170,6 @@ export default function Modal(props){
           <div className="pledge-inputSection sold-out">Sorry It's Sold Out</div>
         </article>
     </section>
+    }
   )
 }
