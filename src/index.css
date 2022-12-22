@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+:root {
+  --primary-moderate-Cyan:hsl(176, 50%, 47%);
+  --primary-dark-Cyan:hsl(176, 72%, 28%);
+  --nuetral-Black: hsl(0, 0%, 0%);
+  --neutral-dark-Gray:hsl(0, 0%, 48%);
+  --rangeProgressBar:80%; 
+  --animation-name: '';
+  --hide-modal: block;
+}
+
+body{
+  font-size: clamp(0.938rem, 0.093vw + 0.919rem, 1rem);
+  font-family: 'Commissioner', sans-serif;
+  color:var(--nuetral-Black);
+}
+
+p{
+  color:var(--neutral-dark-Gray);
+  line-height: 23px;
+}
+li{
+  list-style-type: none;
+}
+button,
+input{
+  border:none;
+  font-family:inherit;
+  color:inherit;
+  font-size:inherit;
+  cursor: pointer;
+}
+button{
+  font-weight: 500;
+  transition: .4s ease-in-out;
+}
+img{
+  max-width:100%;
+  object-fit: cover;
+}
+h1{
+  font-size:1.8rem;
+}
+svg,
+img{
+  cursor: pointer;
+}
+
+
+
+
+
+
+header{
+  background-image:url('/images/image-hero-mobile.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height:45vh;
+  padding:1.5em 1.2em;
+}
+
+header nav{
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.top-nav{
+  position: absolute;
+  background-color:hsl(0, 0%, 100%);
+  width:90%;
+  left:-50%;
+  right:-50%;
+  margin-inline:auto;
+  top:3em;
+  border-radius: 10px;
+  border:1px solid #c7c6c6;
+  padding:.5em;
+  height: auto;
+  display:none;
+  z-index:100;
+}
+.top-nav li{
+  margin-block:1em;
+  padding:.5em 1em;
+  font-weight: 500;
+  cursor: pointer;
+  color:var(--nuetral-Black);
+  border-bottom:1px solid rgba(184, 183, 183, 0.144);
+}
+.top-nav li:last-child{
+  border-bottom:none;
+}
+
+.show-nav{
+  display:block;
+}
+
+
+/* MAIN CONTENT STYLING  */
+
+.intro-section,
+.count,
+.productsDetails-Container{
+  text-align: center;
+  background-color:white;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.055);
+  max-width:88%;
+  margin-inline:auto;
+  border-radius: 10px;
+}
+.intro-section{
+  position: relative;
+  top:-3em;
+  padding-inline:1em;
+  padding-bottom:2em;
+}
+.intro-section button:last-of-type{
+  border-radius: 30px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right:2em;
+  text-align: center;
+}
+.intro-sectionImg{
+  position: relative;
+  top:-2em;
+}
+.intro-section h1{
+  font-size: clamp(1.25rem, 0.741vw + 1.102rem, 1.75rem);
+  padding-inline:1em;
+  margin-block:-.8em .5em;
+}
+
+.action-buttons{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-top:1em;
+}
+
+.action-buttons button:nth-child(1){
+  background-color:var(--primary-moderate-Cyan);
+  color:white;
+  width:auto;
+  padding-inline:1em;
+  padding: .9em;
+  border-radius: 40px;
+}
+
+.action-buttons .addTo-bookmark{
+  cursor: pointer;
+}
+
+.bookmarked{
+  color:var(--primary-moderate-Cyan);
+}
+
+.count{
+  padding:1em 2em 2em;
+}
+
+.count div{
+  margin-block:.5em;
+  padding-block:1em;
+  position: relative;
+}
+
+.count div::after{
+  content:"";
+  position: absolute;
+  background-color:rgba(187, 185, 185, 0.575);
+  width:30%;
+  height: 1px;
+  bottom:-1em;
+  margin-inline:auto;
+  right:-50%;
+  left:-50%;
+  display:block;
+}
+
+.count div:nth-child(3)::after,
+.count div:nth-child(4)::after{
+  display:none;
+}
+.count p{
+  margin-top:.3em;
+}
+
+/* THE RANGE PROGRESS BAR FOR TRACKING THE BACKED PROJECTS */
+.range-bar{
+  position: relative;
+  margin-top:1em;
+  background-color:rgb(223, 228, 230);
+  border-radius: 20px;
+  height:.7em !important;
+  padding:0 !important;
+}
+
+.range-bar::before{
+  content:"";
+  position: absolute;
+  background-color: var(--primary-moderate-Cyan);
+  height:100%;
+  width:var(--rangeProgressBar);
+  max-width:100%;
+  left:0;
+  border-radius: 30px;
+  animation-duration: 1.5s;
+  animation-name: var(--animation-name);
+}
+
+@keyframes rangeBar {
+  from{width:80%};
+  to{width:var(--rangeProgressBar)};
+}
+
+
+.productsDetails-Container{
+  margin-block:1.5em;
+  padding:2em 1em;
+  text-align: left;
+}
+
+.productsDetails-Container p{
+  line-height: 25px;
+}
+.productsDetails-Container h2{
+  margin-block:.3em .6em;
+}
+
+.productsDetails-Container p >span{
+  margin-top:2em;
+  display:block;
+}
+
+.about-project{
+  margin-bottom:2em;
+}
+
+.product{
+  border:1px solid rgb(219, 214, 214);
+  border-radius: 10px;
+  padding:1em;
+  margin-block:1.5em;
+}
+
+.product h1{
+  margin-block:.7em;
+}
+.--left{
+  font-weight: 400;
+  font-size: 0.9rem;
+  color:var(--neutral-dark-Gray);
+  margin-left:.2em;
+}
+
+.pledge-limit{
+  color:var(--primary-moderate-Cyan);
+  font-weight: 500;
+  margin-top:-.7em;
+  margin-bottom:1.3em;
+}
+
+.productDesc-end button{
+  background-color:var(--primary-moderate-Cyan);
+  color:white;
+  border-radius: 30px;
+  padding:.8em 1.3em;
+}
+
+.unavailable{
+  opacity: .4;
+}
+
+button:disabled{
+  background-color:var(--neutral-dark-Gray);
+}
+
+
+
+
+/* MODAL STYLING  ( PLEDGE INPUT)*/
+.modal{
+  position:absolute;
+  top: 20%;
+  left:-50%;
+  right:-50%;
+  margin-inline: auto;
+  max-width:90%;
+  background-color: white;
+  z-index:50;
+  border-radius: 10px;
+  padding:1em;
+  box-shadow:0 0 3px 3px rgba(0, 0, 0, 0.11);
+  display:var(--hide-modal);
+}
+.modal h1{
+  font-size:1.3rem;
+  margin-block:1em;
+}
+.close-modal{
+  position: absolute;
+  top:2.5em;
+  cursor: pointer;
+  right:1em;
+  transition: .3s ease-in-out;
+}
+
+
+/* the pledge support details */
+.support-area{
+  border: 1px solid #bbbaba;
+  border-radius: 5px;
+  padding:1em;
+  margin-block:2em;
+  padding-bottom:2em;
+}
+.support-intro{
+  position: relative;
+  padding-bottom:2em;
+}
+.support-area:first-of-type{
+  margin-top:2em;
+}
+.pledge-title{
+  position:relative;
+  left:3em;
+  margin-bottom:1em;
+  font-weight: 700;
+  font-size:1rem;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+
+.support-area input[type="checkbox"]{
+  position:relative;
+  bottom:-1.1em;
+  border-radius: 50%;
+  display:none;
+}
+.toggle{
+  position: relative;
+}
+
+.toggle-bgcolor{
+  background-color:var(--primary-moderate-Cyan)
+}
+.toggle::after{
+  content:"";
+  position: absolute;
+  background-color:inherit;
+  width:1em;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  cursor: pointer;
+  top:1.3em;
+}
+.support-area .toggle::before{
+  content:"";
+  position: absolute;
+  background-color:white;
+  width:1.7em;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border:1px solid rgb(202, 200, 200);
+  cursor: pointer;
+  top:1.02em;
+  left:-.29em;
+}
+
+.support1{
+  padding-left:1.5em;
+}
+.support1 .pledge-title{
+  left:2em
+}
+.support1 .toggle{
+  left:-.5em;
+  top:-1.3em;
+}
+
+.row h2:last-of-type{
+  position: absolute;
+  bottom:-1em;
+  left:0em;
+}
+.row p{
+  color:var(--primary-moderate-Cyan);
+  font-weight: 500;
+  position: relative;
+  top:-.2em;
+  right:-3em;
+}
+
+
+
+/* INPUT SECTION FOR PLEDGE SUPPORT */
+.pledge-inputSection{
+  margin-top:1em;
+  border-top:1px solid rgb(214, 211, 211);
+  padding-top:2em;
+}
+
+.pledge-inputSection input{
+  display:block;
+  max-width:90%;
+  margin-inline:auto;
+  text-align: center;
+}
+.pledge-inputSection input:focus{
+  outline: none;
+  border:none;
+}
+.pledge-inputSection > div{
+  display:flex;
+  justify-content: space-between;
+  padding-inline:1em;
+  margin-top:1em;
+}
+
+.pledge-inputSection .constantAmount-btn{
+  background:transparent;
+  border:1px solid var(--neutral-dark-Gray);
+  padding:.7em 1.6em;
+  border-radius: 30px;
+}
+.pledge-inputSection button > span{
+  margin-right:.5em;
+  color:grey;
+}
+
+.pledge-inputSection .continue-btn{
+  background-color:var(--primary-moderate-Cyan);
+  color:white;
+  padding:.3em 1.5em;
+  border-radius: 30px;
+}
+
+.pledge-inputSection{
+  display: none !important;
+}
+
+.showPledgeInput{
+  display: block !important;
+}
+
+.continue-btn:first-of-type{
+  width:70%;
+  padding:.8em;
+  margin: 1em auto;
+  display: block;
+}
+
+/* the sold-out project */
+.sold-out{
+  border:0;
+  color:red;
+  margin-top:1em;
+}
+
+
+
+/* MODAL STYLING (COMPLETED) */
+.modal-complete{
+  background-color: white;
+  max-width:90%;
+  margin-inline:auto;
+  left:-50%;
+  right:-50%;
+  z-index:50;
+  border-radius: 10px;
+  padding:2em;
+  box-shadow:0 0 3px 3px rgba(0, 0, 0, 0.13);
+  text-align: center;
+  bottom:7em;
+  position: absolute;
+}
+
+.modal-complete h2{
+  margin-block:1em;
+}
+
+.modal-complete button{
+  background-color:var(--primary-moderate-Cyan);
+  color:white;
+  margin-top:1em;
+  padding:.7em 1.7em;
+  border-radius: 20px;
+}
+
+
+
+button:hover{
+  background-color:var(--primary-dark-Cyan) !important;
+}
+.unavailable button:hover{
+  cursor: not-allowed;
+  background:var(--neutral-dark-Gray) !important;
+}
+
+.action-buttons button:nth-child(2):hover{
+  color:var(--primary-moderate-Cyan);
+  background-color: hsl(0, 6%, 88%) !important;
+}
+.pledge-title:hover{
+  color:var(--primary-moderate-Cyan) !important;
+}
+.constantAmount-btn:hover{
+  background-color: initial !important;
+  border:1px solid var(--primary-moderate-Cyan) !important;
+  transform: scale(1.1);
+}
+.close-modal:hover{
+  fill:#000000 !important;
+  transform:scale(1.1);
+}
+
+
+
+/* MEDIA QUERY FOR LARGER SCREEN SIZES */
+
+@media (min-width:30rem) {
+  .support-area .toggle::after{
+    top:1.3em;
+  }
+  .support-area .toggle::before{
+    top:1em;
+    left:-.36em;
+  }
+}
+
+@media (min-width:70rem) {
+  h2,
+  .pledge-title{
+    font-size:1.4rem;
+  }
+  header{
+    background-image: url('/images/image-hero-desktop.jpg');
+    padding: 2em;
+    height:70vh;
+    background-size: auto;
+    background-position-y:-1.5em;
+  }
+
+  .top-nav{
+    position: unset;
+    background: transparent;
+    padding:0;
+    display:block;
+    width:auto;
+    top:0;
+    right:-100%;
+    margin:0;
+    border:none;
+  }
+  .top-nav li{
+    display:inline-block;
+    color:white;
+    margin-block:0;
+    margin-inline: .7em;
+    padding:0;
+  }
+  .toggle-menu{
+    display:none;
+  }
+
+  .intro-section,
+  .count,
+  .productsDetails-Container{
+    text-align: left;
+    max-width:50% !important;
+    padding-inline:2em 1em;
+  }
+  .count{
+    margin-top:-1em;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .count .range-bar{
+    grid-column: 1 / -1;
+  }
+  .intro-section{
+    margin-top:-7em;
+    text-align: center;
+  }
+
+  .action-buttons{
+    padding-inline:1em;
+    justify-content: space-between;
+    margin-top:2em;
+  }
+  .intro-section button{
+    width:30% !important;
+  }
+
+  .productDesc-end{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:1em;
+  }
+
+  .modal{
+    max-width:70%;
+  }
+  .support-area{
+    padding-inline:3em;
+    border-radius: 12px;
+  }
+  .active-pledge{
+    border:2px solid var(--primary-moderate-Cyan);
+  }
+  .support1 p{
+    margin-top:1em;
+  }
+  .support1 .continue-btn{
+    width:30%
+  }
+  .support1 .pledge-inputSection{
+    margin-top:1em;
+  }
+  .support1 .pledge-title{
+    margin-left:1em;
+  }
+  .support-area .toggle::after{
+    top:1.3em;
+  }
+  .support-area .toggle::before{
+    top:1em;
+    left:-.36em;
+  }
+  .row{
+    display:flex;
+    margin-left:2em;
+    justify-content: space-between;
+  }
+  .row h2:last-of-type,
+  .pledge-title{
+    position: unset;
+    transition:.3s;
+  }
+  .row p{
+    top:.3em;
+    left: -9em;
+  }
+  .showPledgeInput{
+    display:flex !important; 
+    margin-top:0em;
+    padding-top:.5em;
+    justify-content: space-between;
+  }
+  .pledge-inputSection input{
+    width: 30% ;
+    margin:0;
+    text-align: left;
+  }
+
+  .pledge-inputSection >  div button{
+    margin-inline-start:1.3em;
+  }
+  .modal-complete{
+    max-width:50%;
+  }
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
