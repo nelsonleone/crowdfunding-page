@@ -1,6 +1,6 @@
 {
-  "name": "crowdfunding-product-page-main",
-  "private": false,
+  "name": "crowdfunding-page",
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {

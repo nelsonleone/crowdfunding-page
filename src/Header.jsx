@@ -10,9 +10,9 @@ function Header(){
   return (
       <header>
           <nav>
-            <img src="./images/logo.svg" alt="Logo" className="logo"/>
+            <img src="/images/logo.svg" alt="Logo" className="logo"/>
             <img 
-              src="./images/icon-hamburger.svg"
+              src="/images/icon-hamburger.svg"
               alt="Open Menu"
               aria-controls="top-nav"
               aria-expanded={navDisplay ? "true" : "false"}

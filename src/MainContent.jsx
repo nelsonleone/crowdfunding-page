@@ -4,7 +4,7 @@ export default function MainContent(props){
   return (
     <main>
     <section className="intro-section">
-      <img src="./images/logo-mastercraft.svg" alt="" aria-hidden="true" className="intro-sectionImg"/>
+      <img src="/images/logo-mastercraft.svg" alt="" aria-hidden="true" className="intro-sectionImg"/>
       <h1>Mastercraft Bamboo Monitor Riser</h1>
       <p>
           A beautiful & handcrafted monitor stand to reduce neck and eye strain.
@@ -44,7 +44,7 @@ export default function MainContent(props){
 
               : 
 
-              <img src="./images/icon-bookmark.svg" alt="ADD TO BOOKMARK" aria-hidden="true"/>
+              <img src="/images/icon-bookmark.svg" alt="ADD TO BOOKMARK" aria-hidden="true"/>
             }
             {props.bookmarkState ? "MARKED" : "Bookmark"}
           </button>

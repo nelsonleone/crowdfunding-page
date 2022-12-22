@@ -221,8 +221,8 @@ header nav{
 }
 
 @keyframes rangeBar {
-  from{width:80%};
-  to{width:var(--rangeProgressBar)};
+  from{width:80%}
+  to{width:var(--rangeProgressBar)}
 }
 
 
