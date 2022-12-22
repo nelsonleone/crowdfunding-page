@@ -88,7 +88,6 @@ function App() {
 
   function handleModalShowComplete(){
     setCompletedModal(true)
-    document.documentElement.style.setProperty("--hide-modal","none")
   }
 
   useEffect(() => {
@@ -107,6 +106,7 @@ function App() {
        setPledgeValue={setPledgeValue}
        handleConstantPledgeAmount={handleConstantPledgeAmount}
        handleModalShowComplete={handleModalShowComplete}
+       modalCompleteState={completedModal}
       /> 
       : 
        <MainContent
