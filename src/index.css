@@ -585,6 +585,7 @@ button:hover{
   }
   .count{
     margin-top:-1em;
+    text-align:center;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
