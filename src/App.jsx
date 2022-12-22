@@ -71,7 +71,7 @@ function App() {
   
   function setProgressBar(){
      setTimeout(() => {
-       document.documentElement.style.setProperty('--rangeProgressBar',`calc(80% + ${totalPledgeValue / 50}%)`)
+       document.documentElement.style.setProperty('--rangeProgressBar',`calc(80% + ${totalPledgeValue / 70}%)`)
        document.documentElement.style.setProperty('--animation-name','rangeBar')
      }, 500);
   }
